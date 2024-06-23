@@ -1,6 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product, ProductService } from 'src/commons/services/product.service';
-import { Modal } from 'bootstrap';
 import { Router } from '@angular/router';
 import { CommonUtil } from 'src/commons/utilities/commonUtil';
 
@@ -11,7 +10,6 @@ import { CommonUtil } from 'src/commons/utilities/commonUtil';
   providers: [CommonUtil]
 })
 export class ProductListComponent implements OnInit {
-  @ViewChild('productModal', { static: false }) productModal?: ElementRef;
   products: Product[] = [];
   isDataFetched = false;
   selectedProduct!: Product | null;

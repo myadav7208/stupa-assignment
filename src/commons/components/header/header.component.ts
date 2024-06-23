@@ -12,7 +12,6 @@ import { CommonUtil } from 'src/commons/utilities/commonUtil';
   providers: [CommonUtil]
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-
   isUserLoggedIn = false;
   cart: Product[] = [];
   cartSubscription!: Subscription;

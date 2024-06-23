@@ -23,10 +23,8 @@ export class AuthInterceptor implements HttpInterceptor {
           Authorization: `Bearer ${authToken}`
         }
       });
-
       return next.handle(authReq);
     }
-
     return next.handle(req);
   }
 }
