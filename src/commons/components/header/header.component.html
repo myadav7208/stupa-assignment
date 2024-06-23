@@ -1,0 +1,36 @@
+<header class="header bg-white">
+  <div class="container px-lg-3">
+    <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand" routerLink="/"><span
+          class="fw-bold text-uppercase text-dark">E-Commerce</span></a>
+      <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" routerLink="cart"> <i
+                class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart<small class="text-gray fw-normal">({{cart.length ||
+                0}})</small></a>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal" *ngIf="!isUserLoggedIn"> <i
+                class="fas fa-user me-1 text-gray fw-normal"></i>Login
+            </span>
+            <span class="nav-link" *ngIf="isUserLoggedIn" (click)="logout()"> <i
+                class="fas fa-user me-1 text-gray fw-normal"></i>Logout
+            </span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="Login Modal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-login (closeModal)="closeModal()"></app-login>
+      </div>
+    </div>
+  </div>
+</div>

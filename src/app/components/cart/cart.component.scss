@@ -1,0 +1,29 @@
+.quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity input {
+    width: 2rem;
+    text-align: center;
+}
+
+.inc-btn,
+.dec-btn {
+    background: none;
+    border: none;
+    width: 1rem;
+    outline: none;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.product-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}

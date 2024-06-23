@@ -1,0 +1,33 @@
+<!-- loader -->
+<div *ngIf="!isDataFetched" class="container d-flex justify-content-center">
+    <div class="spnner spinner-border text-secondary" role="status">
+    </div>
+</div>
+
+<!-- sort menus -->
+<div *ngIf="isDataFetched" class="mb-3 d-flex justify-content-end mb-0">
+    <select class="form-select-sm" #sortOptions (change)="sortProductsByPrice(sortOptions.value)">
+        <option default disabled>Sort By Price</option>
+        <option value="lowToHigh">Price: Low to High</option>
+        <option value="highToLow">Price: High to Low</option>
+    </select>
+</div>
+
+<!-- product list -->
+<div class="row">
+    <div class="col-xl-3 col-lg-4 col-sm-6" *ngFor="let product of products">
+        <app-product [product]="product" (selectedProduct)="viewProduct($event)"></app-product>
+    </div>
+</div>
+
+<!-- view product -->
+<div class="modal fade" id="productModal" #productModal tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" (hidden.bs.modal)="onModalClose()">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <app-view-product [product]="selectedProduct" (closeModalEmitter)="closeModal()"></app-view-product>
+            </div>
+        </div>
+    </div>
+</div>

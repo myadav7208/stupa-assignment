@@ -1,0 +1,56 @@
+.product-overlay {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem 0;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.product:hover .product-overlay {
+    opacity: 1;
+}
+
+.product {
+    cursor: pointer;
+}
+
+.product:hover img {
+    opacity: 0.3;
+}
+
+.product img {
+    filter: grayscale(40%);
+    transition: all 0.3s;
+    height: 350px;
+}
+
+.product-name {
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bg-center {
+    background-position: center center !important;
+    background-size: cover !important;
+    min-height: 20rem;
+}
+
+.product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+}

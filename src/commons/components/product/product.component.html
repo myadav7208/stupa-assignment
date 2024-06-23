@@ -1,0 +1,15 @@
+<div class="product text-center">
+    <div class="position-relative mb-3">
+        <div class="badge text-white bg-"></div><a class="d-block"><img class="img-fluid w-100" src="{{product.image}}"
+                alt="..."></a>
+        <div class="product-overlay">
+            <ul class="mb-0 list-inline">
+                <li class="list-inline-item"><button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal"
+                        data-bs-target="#productModal" (click)="viewProduct()"><i class="fas fa-expand"></i></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <span class="product-name">{{product.title}}</span>
+    <p class="small text-muted">{{product.price}}</p>
+</div>
